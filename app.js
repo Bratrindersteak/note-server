@@ -58,4 +58,28 @@ router.get('/login', (ctx, next) => {
     console.log( `length: ${ ctx.length }` );
 });
 
+router.get('/getData', (ctx, next) => {
+    ctx.response.set({
+        'Access-Control-Allow-Origin': '*',
+    });
+    ctx.response.type = 'json';
+    ctx.response.body = [{
+            type: '早饭',
+            name: '烤翅一绝',
+            cost: '8'
+        }, {
+            type: '早饭',
+            name: '烤翅一绝',
+            cost: '9'
+        }, {
+            type: '早饭',
+            name: '烤翅一绝',
+            cost: '10'
+        }, {
+            type: '早饭',
+            name: '烤翅一绝',
+            cost: '13'
+        }];
+});
+
 app.listen(3000, () => console.log( 'open on port 3000' ));
